@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationContext;
 @SpringBootApplication
 @Slf4j
 public class AddressBookApplication {
-
+	
 	public static void main(String[] args) {
 
 		ApplicationContext context =SpringApplication.run(AddressBookApplication.class, args);

@@ -51,10 +51,7 @@ public class AddressBookController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<ResponseDto> deleteUser(@PathVariable("id") @Valid Long id,BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
-            return new ResponseEntity<ResponseDto>(new ResponseDto((bindingResult.getAllErrors().get(0).getDefaultMessage()),"404"),HttpStatus.BAD_REQUEST);
-        }
+    public ResponseEntity<ResponseDto> deleteUser(@PathVariable("id") @Valid Long id){
         try{
             AddressBookDto addressBookDto = addressBookService.deleteUser(id);
             ResponseDto responseDto = new ResponseDto("User deleted succesfully",addressBookDto);
